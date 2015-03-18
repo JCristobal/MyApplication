@@ -32,19 +32,16 @@ public class saludo extends Activity {
         });
 
 
+        // Imagen-Botón hacia la actividad vista
         final ImageButton boton_img = (ImageButton)findViewById(R.id.imageButton);
         boton_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent3 =
-                        new Intent(saludo.this, MainActivity.class);
+                        new Intent(saludo.this, vista.class);
                 startActivity(intent3);
-
-
             }
         });
-
 
 
     }

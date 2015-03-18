@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView"
+        android:layout_weight="1.01" />
+
+    <Button
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:text="Atrás"
+        android:id="@+id/button3" />
+
+    <TextClock
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock"
+        android:layout_gravity="right"
+        android:layout_weight="0.05" />
+
+</LinearLayout>
