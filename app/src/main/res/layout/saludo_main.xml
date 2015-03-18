@@ -10,7 +10,7 @@
         android:id="@+id/imageButton"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.30"
-        android:background="#4B8A08"
+        android:background="@drawable/aoe"
         />
 
     <TextView

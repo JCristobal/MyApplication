@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class saludo extends Activity {
     @Override
@@ -29,5 +30,22 @@ public class saludo extends Activity {
                 startActivity(intent2);
             }
         });
+
+
+        final ImageButton boton_img = (ImageButton)findViewById(R.id.imageButton);
+        boton_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent3 =
+                        new Intent(saludo.this, MainActivity.class);
+                startActivity(intent3);
+
+
+            }
+        });
+
+
+
     }
 }
