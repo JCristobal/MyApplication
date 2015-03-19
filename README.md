@@ -1,4 +1,5 @@
 # MyApplication
 Primera aproximación con Android Studio
 
-Primer proyecto con Android Studio. Ésta primera aproximación consta de una pantalla de bienvenida con un botón que te lleva a otra pantalla con una imagen, barra de proceso y botón que te lleva atrás.
+Primer proyecto con Android Studio. Ésta primera aproximación consta de varias actividades: contienen botones que llevan de unas a otras e ímagenes que también llevan a otras actividades, barras de progreso y hora actual.
+

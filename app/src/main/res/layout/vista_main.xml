@@ -4,23 +4,24 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar2"
+        android:layout_weight="0.15" />
+
     <WebView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/webView"
-        android:layout_weight="1.01" />
+        android:layout_weight="0.71" />
 
     <Button
         android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:text="Atrás"
-        android:id="@+id/button3" />
-
-    <TextClock
-        android:layout_width="163dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_gravity="right"
-        android:layout_weight="0.05" />
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

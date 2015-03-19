@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 
 /**
@@ -14,6 +16,7 @@ import android.widget.Button;
  */
 
 public class vista extends Activity {
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +59,29 @@ public class vista extends Activity {
         webview.getSettings().setJavaScriptEnabled(true);    // Permitimos que se ejecute JavaScript
         webview.getSettings().setLoadWithOverviewMode(true); // Ajustamos la vista para que no se vea demasiado grande
         webview.getSettings().setUseWideViewPort(true);
+        webview.getSettings().setBuiltInZoomControls(true);  // habilitamos el zoom
         webview.loadUrl(URL);
+
+
+        // Para la barra de proceso
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
+        webview.setWebChromeClient(new WebChromeClient()
+        {
+            @Override
+            public void onProgressChanged(WebView view, int progress)
+            {
+                progressBar.setProgress(0);
+                progressBar.setVisibility(View.VISIBLE);
+                vista.this.setProgress(progress * 1000);
+
+                progressBar.incrementProgressBy(progress);
+
+                if(progress == 100)
+                {
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
 
     }
 }
