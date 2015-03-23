@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import static android.webkit.WebSettings.ZoomDensity.*;
 
 
 /**
@@ -16,7 +18,9 @@ import android.widget.ProgressBar;
  */
 
 public class vista extends Activity {
-    private ProgressBar progressBar;
+
+    private ProgressBar progressBar; // Para la barra de proceso
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +49,13 @@ public class vista extends Activity {
             }
         });
 
-
+        // Trabajamos con WebView
         String URL = "http://developer.android.com";
         WebView webview;
         webview = (WebView)findViewById(R.id.webView);
 
-        webview.setWebViewClient(new WebViewClient() {         // Para que sólo se vea en el webview
+        // Para que sólo se vea en el webview: si no añadimos ésto abrirá una pestaña del navegador con la URL
+        webview.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
@@ -60,6 +65,7 @@ public class vista extends Activity {
         webview.getSettings().setLoadWithOverviewMode(true); // Ajustamos la vista para que no se vea demasiado grande
         webview.getSettings().setUseWideViewPort(true);
         webview.getSettings().setBuiltInZoomControls(true);  // habilitamos el zoom
+        //webview.setInitialScale(100);   // podemos también ajusar el zoom a un valor fijo
         webview.loadUrl(URL);
 
 
@@ -84,4 +90,6 @@ public class vista extends Activity {
         });
 
     }
+
+
 }

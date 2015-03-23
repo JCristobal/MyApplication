@@ -1,5 +1,6 @@
 package com.example.jcristobal.myapplication;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,6 +33,20 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
+        // Botón de salida (final de la aplicación)
+        final Button boton_salida = (Button)findViewById(R.id.exit_button);
+        boton_salida.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
 
@@ -58,10 +73,5 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
-    //public void selfDestruct(View view) {
-        // Kabloey
-    //}
 
     }
