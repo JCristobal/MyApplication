@@ -4,5 +4,6 @@
     <string name="app3">Vista</string>
     <string name="hello_world">Bienvenido</string>
     <string name="action_settings">JCristobal</string>
+    <string name="action_exit">Exit</string>
     <string name="boton">Continúa</string>
 </resources>
