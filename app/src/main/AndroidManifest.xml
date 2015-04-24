@@ -26,6 +26,10 @@
             android:name=".vista"
             android:label="@string/app3" >
         </activity>
+        <activity
+            android:name=".tabs"
+            android:label="@string/app4" >
+        </activity>
     </application>
 
 </manifest>
