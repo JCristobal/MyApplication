@@ -41,4 +41,13 @@
         android:layout_alignLeft="@+id/button"
         android:layout_alignStart="@+id/button" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tabs deslizantes"
+        android:id="@+id/button_tabs_desl"
+        android:layout_below="@+id/button_tabs"
+        android:layout_alignLeft="@+id/button_tabs"
+        android:layout_alignStart="@+id/button_tabs" />
+
 </RelativeLayout>

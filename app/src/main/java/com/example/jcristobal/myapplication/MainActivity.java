@@ -44,6 +44,17 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        final Button boton_tabs_deslizantes = (Button)findViewById(R.id.button_tabs_desl);
+        boton_tabs_deslizantes.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =
+                        new Intent(MainActivity.this, CrearTabsSwipe.class);
+
+                startActivity(intent);
+            }
+        });
+
 
 
         // Botón de salida (final de la aplicación)
