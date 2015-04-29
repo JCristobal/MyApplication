@@ -4,11 +4,15 @@ package com.example.jcristobal.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -91,7 +95,19 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            //Toast toast1 = Toast.makeText(getApplicationContext(), "Visita JCristobal en GitHub", Toast.LENGTH_SHORT);
+            //toast1.show();
+            Toast toast_personalizado = new Toast(getApplicationContext());
+
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.lytLayout));
+
+            TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
+            txtMsg.setText("Visita JCristobal en GitHub");
+
+            toast_personalizado.setDuration(Toast.LENGTH_SHORT);
+            toast_personalizado.setView(layout);
+            toast_personalizado.show();
         }
         if (id == R.id.action_exit) {
             finish();
