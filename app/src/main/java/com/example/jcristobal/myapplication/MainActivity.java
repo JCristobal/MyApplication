@@ -1,8 +1,15 @@
 package com.example.jcristobal.myapplication;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -48,6 +55,41 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        final Button boton_alert = (Button)findViewById(R.id.button_alerta);
+        boton_alert.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Creamos la notificación
+                NotificationCompat.Builder mBuilder =
+                        new NotificationCompat.Builder(MainActivity.this)
+                                .setSmallIcon(android.R.drawable.ic_dialog_info)  // icono pequeño (se queda en barra superior)
+                                .setLargeIcon((((BitmapDrawable)getResources()
+                                        .getDrawable(R.drawable.gitmark)).getBitmap())) // icono grande (a la derecha)
+                                .setContentTitle("Mensaje de Alerta")
+                                .setContentText("Ejemplo de notificación.")
+                                //.setContentInfo("4")
+                                .setTicker("Alerta!")  // si tiene espacio mostrará este texto junto al icono pequeño
+                                .setWhen(System.currentTimeMillis()+10000);
+                                int NOTIF_ALERTA_ID = 0;
+
+                // Actividad a la que se dirige si pulsa la alerta
+                Intent notIntent =
+                        new Intent(MainActivity.this, MainActivity.class);
+                PendingIntent contIntent =
+                        PendingIntent.getActivity(
+                                MainActivity.this, 0, notIntent, 0);
+                mBuilder.setContentIntent(contIntent);
+
+                // Generamos la notificación
+                NotificationManager mNotificationManager =
+                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                mNotificationManager.notify(NOTIF_ALERTA_ID, mBuilder.build());
+
+            }
+        });
+
         final Button boton_tabs_deslizantes = (Button)findViewById(R.id.button_tabs_desl);
         boton_tabs_deslizantes.setOnClickListener(new OnClickListener() {
             @Override
@@ -58,7 +100,6 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
 
 
         // Botón de salida (final de la aplicación)
