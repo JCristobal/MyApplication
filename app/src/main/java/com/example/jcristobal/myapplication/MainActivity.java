@@ -1,12 +1,10 @@
 package com.example.jcristobal.myapplication;
 
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
@@ -90,6 +88,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
         final Button boton_tabs_deslizantes = (Button)findViewById(R.id.button_tabs_desl);
         boton_tabs_deslizantes.setOnClickListener(new OnClickListener() {
             @Override
@@ -101,6 +100,16 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        final Button boton_cam = (Button)findViewById(R.id.button_camera);
+        boton_cam.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =
+                        new Intent(MainActivity.this, camara.class);
+
+                startActivity(intent);
+            }
+        });
 
         // Botón de salida (final de la aplicación)
         final Button boton_salida = (Button)findViewById(R.id.exit_button);
