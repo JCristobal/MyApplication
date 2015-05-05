@@ -111,6 +111,8 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
+
         // Botón de salida (final de la aplicación)
         final Button boton_salida = (Button)findViewById(R.id.exit_button);
         boton_salida.setOnClickListener(new OnClickListener() {
