@@ -50,7 +50,8 @@ public class vista extends Activity {
         });
 
         // Trabajamos con WebView
-        String URL = "http://jcristobal.github.io/learnUSAstates/index.html";
+        //String URL = "http://jcristobal.github.io/learnUSAstates/index.html";
+        String URL = "http://series.ly/index.php";
         WebView webview;
         webview = (WebView)findViewById(R.id.webView);
 

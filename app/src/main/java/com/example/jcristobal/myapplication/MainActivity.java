@@ -111,7 +111,16 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        final Button boton_alarma = (Button)findViewById(R.id.button_alarm);
+        boton_alarma.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =
+                        new Intent(MainActivity.this, alarma.class);
 
+                startActivity(intent);
+            }
+        });
 
         // Botón de salida (final de la aplicación)
         final Button boton_salida = (Button)findViewById(R.id.exit_button);
